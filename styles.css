@@ -4,10 +4,12 @@ Personal Website
 ============================================================================== */
 
 :root {
-  --light: #F3C7BE;
-  --light2: #EC8F7B;
-  --dark: #C2533B;
-  --dark2: #8B2A14;
+  --light: #8380a0;
+  --light2:#b5b2cc;
+  --mid: #deb33b;
+  --dark: #2C2B3C;
+  --dark2: #4c4966;
+
 }
 
 
@@ -23,7 +25,7 @@ body {
   padding: 0;
   width: 100%;
   max-width: 100vw;
-  background: white;
+  background: var(--dark2);
   overflow-x: hidden;
   position: relative;
 }
@@ -33,6 +35,14 @@ img {
   height: auto;
 }
 
+ul {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  overflow-x: hidden;
+  z-index: 5;
+}
 
 /* GRID CONTAINER
 ============================================================================== */
@@ -41,14 +51,23 @@ img {
   max-width: 1600px;
   margin: 0 auto;
   display: grid;
-  column-gap: 1em;
+  column-gap: 2.5em;
   grid-template-columns: 1fr;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 10vh;
+}
+
+.container2 {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  column-gap: 2.5em;
   position: relative;
   z-index: 4;
   padding-bottom: 25vh;
+
 }
-
-
 
 
 /* HEADER
@@ -59,23 +78,30 @@ header {
   max-width: 30em;
   margin: 0 auto;
   padding: 4em;
+  padding-top: 8em;
   padding-bottom: 4em;
   overflow-x: hidden;
 }
 
 .logo {
-  position: absolute;
-  width: 92px;
-  height: 92px;
-  right: 4em;
-  top: 2em;
+  width: 50px;
+  grid-column-start: 2;
+  z-index: 5;
 }
-
+/*
+.logo {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  right: 4em;
+  top: 3em;
+}
+*/
 .video {
   width: 170%;
   height: auto;
   margin-left: -40%;
-  margin-top: -15%;
+  margin-top: -10%;
   margin-bottom: -20%;
   position: relative;
   z-index: -1;
@@ -104,42 +130,47 @@ main {
 /* TYPOGRAPHY
 ============================================================================== */
 p {
-  color: black;
-  font-family: 'Poppins', sans-serif;
+  padding-top: 1em;
+  font-family: 'Archivo', sans-serif;
   font-style: normal;
   font-size: 20px;
-  font-weight: 300;
-  line-height: 26px;
+  font-weight: 200;
+  line-height: 29px;
   margin: 0 0 1em 0;
+  color: var(--light);
 }
 
 b {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h1 {
-  color: var(--dark);
-  font-family: 'Abril Fatface', serif;
+  color: var(--light);
+  font-family: 'Reem Kufi', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 15px;
   font-style: normal;
-  font-size: 48px;
-  line-height: 64.75px;
-  font-weight: lighter;
+  font-size: 38px;
+  line-height: 39px;
+  font-weight: 700;
   margin: 0 0 0.25em 0;
 }
 
 h2 {
-  color: var(--dark2);
-  font-family: 'Abril Fatface', serif;
+  color: var(--mid);
+  font-family: 'Reem Kufi', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 12px;
   font-style: normal;
-  font-size: 48px;
-  line-height: 90%;
-  font-weight: lighter;
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 700;
   margin: 0 0 0.25em 0;
 }
 
 h3 {
-  color: black;
-  font-family: 'Poppins', sans-serif;
+  color: var(--light);
+  font-family: 'Archivo', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -148,8 +179,8 @@ h3 {
 }
 
 h4 {
-  color: var(--dark2);
-  font-family: 'Poppins', sans-serif;
+  color: var(--light);
+  font-family: 'Archivo', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -159,25 +190,75 @@ h4 {
 }
 
 h5 {
-  color: var(--dark);
-  font-family: 'Poppins', sans-serif;
+  color: var(--light);
+  font-family: 'Archivo', sans-serif;
   font-style: normal;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 26px;
-  margin: 0 0 1em 0;
-}
-
-h6 {
-  color: var(--dark2);
-  font-family: 'Poppins', sans-serif;
-  font-style: normal;
-  font-size: 20px;
+  letter-spacing: 3px;
+  font-size: 12px;
   font-weight: 300;
   line-height: 26px;
   margin: 0 0 1em 0;
 }
 
+h6 {
+  color: var(--light);
+  font-family: 'Archivo', sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 26px;
+  margin: 0 0 1em 0;
+  padding-top: 1em;
+}
+
+h7 {
+  color:var(--dark2);
+  font-family: 'Reem Kufi', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 100px;
+  margin: 0 0 0.25em 0;
+  padding-bottom: 1em;
+}
+
+h8 {
+  font-family: 'Reem Kufi', sans-serif;
+  padding-bottom: 1em;
+  text-transform: uppercase;
+  color: var(--light);
+  font-size: 25px;
+  letter-spacing: 13px;
+  font-style: normal;
+  line-height: 30px;
+  font-weight: 700;
+  margin: 0 0 0.25em 0;
+
+}
+
+h9 {
+  color: var(--light);
+  font-family: 'Reem Kufi', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+
+
+/* My Work
+============================================================================== */
+.my-work {
+  padding-top: 20em;
+}
+
+.my-work img{
+  max-width: 100%;
+}
 
 
 /* LINKS
@@ -188,13 +269,13 @@ a {
 }
 
 a:visited {
-  color: var(--dark2);
+  color: var(--light);
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--light);
+  color: var(--mid);
   background-color: transparent;
 }
 
@@ -212,11 +293,17 @@ a:hover {
 
 .project-thumbnail {
   cursor: pointer; 
-  background: #f0f0f0;
+  background: var(--dark);
   display: grid;
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.project-thumbnail img{
+  height: 100%;
+  object-fit: cover;
+  
 }
 
 .project-overlay {
@@ -228,7 +315,7 @@ a:hover {
   height: 100vh;
   width: 100vw;
   padding: 4em;
-  z-index: 5;
+  z-index: 8;
   justify-content: center;
   align-content: center;
   justify-items: center;
@@ -238,7 +325,15 @@ a:hover {
   background-repeat: no-repeat;
   opacity: 0%;
   transition: opacity 0.25s;
-  overflow-y: scroll;
+}
+
+.project-overlay img {
+  box-shadow: -9px 9px 15px black;
+  animation-name: float;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
 .project#active .project-overlay {
@@ -251,9 +346,9 @@ a:hover {
 .close-overlay {
   position: absolute;
   top: 0;
-  right: 0.2em;
+  right: 1em;
   font-size: 4em;
-  color: var(--dark);
+  color: var(--light);
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
@@ -261,7 +356,7 @@ a:hover {
 }
 
 .close-overlay:hover {
-  color: var(--dark2);
+  color: var(--dark);
 }
 
 .project-info {
@@ -276,44 +371,31 @@ a:hover {
 /* SITE BACKGROUND LAYERS
 ============================================================================== */
 
-.site-bg-1, 
-.site-bg-2,
-.site-bg-3 {
+.site-bg-1 {
   position: absolute;
   bottom: 0;
-  left: -10vw;
-  width: 130vw;
+  left: -1623px;
+  width: 500%;
   height: auto;
   overflow: hidden;
+  z-index: 1;
+  bottom: auto;
+  top: -5%;
 }
 
-.site-bg-1 svg, 
-.site-bg-2 svg,
-.site-bg-3 svg {
+.site-bg-1 svg {
   margin-bottom: -10vh;
 }
 
+
 .site-bg-1 {
-  z-index: 1;
-}
-
-.site-bg-2 {
-  z-index: 2;
   animation-name: float;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
 
-.site-bg-3 {
-  z-index: 3;
-  animation-name: float;
-  animation-duration: 3s;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
 
 
 
@@ -375,7 +457,7 @@ a:hover {
 
 
 .active, .dot:hover {
-  background-color: var(--dark2);
+  background-color: var(--mid);
 }
 
 
@@ -410,19 +492,23 @@ a:hover {
     grid-template-columns: auto 30em;
   }
 
-  header {
-    grid-column-start: 2;
-    grid-row-start: 1;
+  .container2 {
+    grid-template-columns: 15em auto 15em;
   }
 
-  main {
+
+  header {
     grid-column-start: 1;
     grid-row-start: 1;
   }
 
+  main {
+    grid-column-start: 2;
+  }
+
   .project-overlay {
     background-image: url(images/overlay-bg-desktop.svg);
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.4fr 1fr;
     padding: 14em;
   }
 
@@ -441,28 +527,27 @@ a:hover {
     margin-top: -2em;
   }
 
-  .close-overlay {
-    position: absolute;
-    top: 0.25em;
-    right: 0.5em;
-    font-size: 4em;
-    color: var(--dark);
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    z-index: 2;
-  }
 
   .project-info {
     grid-column-start: 2;
   }
 
-  .site-bg-1, 
-  .site-bg-2,
-  .site-bg-3 {  
+  .site-bg-1 {  
     bottom: auto;
-    top: 0;
+    left: -250px;
+    top: -5%;
+    z-index: 1;
+    width: 200%;
   }
+
+  .video {
+    margin-left: -50%;
+  }
+
+  .my-work {
+    padding-top: 60%;
+  }
+
 
 }
 
@@ -472,6 +557,37 @@ a:hover {
   main {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .span-two {
+    grid-column-end: span 2;
+  }
+
+
+  .span-three {
+    grid-column-end: span 2;
+  }
+
+  .span-two-rows {
+    grid-row-end: span 2;
+    min-height: 600px;
+  }
+
+  .project {
+    grid-column-end: span 2;
+  }
+  
+  .site-bg-1 {  
+    bottom: auto;
+    left: -150px;
+    top: -5%;
+    z-index: 1;
+    width: 150%;
+  }
+
+  .my-work {
+    padding-top: 30%;
+  }
+
 
 }
 
@@ -490,20 +606,58 @@ a:hover {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .project {
+    grid-column-end: initial;
+    grid-row-end: initial;
+  }
+
+  .project-thumbnail img {
+    max-height: 305px;
+  }
+
   .span-two {
     grid-column-end: span 2;
   }
-  
+
+
   .span-three {
     grid-column-end: span 3;
   }
 
   .span-two-rows {
     grid-row-end: span 2;
+    min-height: 600px;
   }
 
-  .project-thumbnail img {
-    max-height: 300px;
+  .span-two-rows img{
+    max-height: 800px;
+  }
+
+  header {
+    padding: 0;
+    padding-top: 8em;
+    padding-bottom: 4em;
+  }
+
+  .video {
+    margin-left: -80%;
+  }
+
+  .site-bg-1 {  
+    bottom: auto;
+    top: -5%;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+  }
+
+  .my-work {
+    padding-top: 37%;
+  }
+
+  .my-work img{
+    max-width: 50%;
+    padding: 1em;
   }
 
 }
