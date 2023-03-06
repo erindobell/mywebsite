@@ -294,6 +294,7 @@ a:hover {
   position: relative;
   margin-bottom: 0.5em;
   width: 100%;
+  height: auto;
 }
 
 .project-thumbnail {
@@ -306,9 +307,8 @@ a:hover {
 }
 
 .project-thumbnail img{
-  height: 100%;
-  object-fit: cover;
-  
+  height: auto;
+  object-fit: cover; 
 }
 
 .project-overlay {
@@ -589,7 +589,7 @@ a:hover {
   }
 
   .my-work {
-    padding-top: 30%;
+    padding-top: 40%;
   }
 
 
@@ -656,7 +656,7 @@ a:hover {
   }
 
   .my-work {
-    padding-top: 37%;
+    padding-top: 45%;
   }
 
   .my-work img{
