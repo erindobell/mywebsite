@@ -42,6 +42,9 @@ ul {
   position: relative;
   overflow-x: hidden;
   z-index: 5;
+  background-color: #2C2B3C;
+  margin-block-end: 0;
+  margin-block-start: 0;
 }
 
 /* GRID CONTAINER
@@ -56,6 +59,7 @@ ul {
   position: relative;
   z-index: 2;
   padding-bottom: 10vh;
+  overflow: hidden;
 }
 
 .container2 {
@@ -105,6 +109,7 @@ header {
   margin-bottom: -20%;
   position: relative;
   z-index: -1;
+  overflow-x: hidden;
 }
 
 
@@ -253,7 +258,7 @@ h9 {
 /* My Work
 ============================================================================== */
 .my-work {
-  padding-top: 20em;
+  padding-top: 5em;
 }
 
 .my-work img{
@@ -325,6 +330,7 @@ a:hover {
   background-repeat: no-repeat;
   opacity: 0%;
   transition: opacity 0.25s;
+  overflow-x: hidden;
 }
 
 .project-overlay img {
@@ -374,13 +380,11 @@ a:hover {
 .site-bg-1 {
   position: absolute;
   bottom: 0;
-  left: -1100px;
-  width: 500%;
+  width: 100%;
   height: auto;
-  overflow: hidden;
   z-index: 1;
   bottom: auto;
-  top: -5%;
+  top: 13%;
 }
 
 .site-bg-1 svg {
