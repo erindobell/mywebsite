@@ -5,7 +5,7 @@ Personal Website
 
 :root {
   --light: #8380a0;
-  --light2:#b5b2cc;
+  --light2:#bfbcd5;
   --mid: #deb33b;
   --dark: #2C2B3C;
   --dark2: #4c4966;
@@ -137,7 +137,7 @@ p {
   font-weight: 200;
   line-height: 29px;
   margin: 0 0 1em 0;
-  color: var(--light);
+  color: var(--light2);
 }
 
 b {
@@ -169,7 +169,7 @@ h2 {
 }
 
 h3 {
-  color: var(--light);
+  color: var(--light2);
   font-family: 'Archivo', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -179,7 +179,7 @@ h3 {
 }
 
 h4 {
-  color: var(--light);
+  color: var(--light2);
   font-family: 'Archivo', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -269,7 +269,7 @@ a {
 }
 
 a:visited {
-  color: var(--light);
+  color: var(--light2);
   background-color: transparent;
   text-decoration: none;
 }
@@ -374,7 +374,7 @@ a:hover {
 .site-bg-1 {
   position: absolute;
   bottom: 0;
-  left: -1623px;
+  left: -1100px;
   width: 500%;
   height: auto;
   overflow: hidden;
