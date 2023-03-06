@@ -101,6 +101,8 @@ header {
   top: 3em;
 }
 */
+
+
 .video {
   width: 170%;
   height: auto;
@@ -109,7 +111,6 @@ header {
   margin-bottom: -20%;
   position: relative;
   z-index: -1;
-  overflow-x: hidden;
 }
 
 
@@ -156,9 +157,9 @@ h1 {
   letter-spacing: 15px;
   font-style: normal;
   font-size: 38px;
-  line-height: 39px;
+  line-height: 44px;
   font-weight: 700;
-  margin: 0 0 0.25em 0;
+  margin: -8px 0 0.25em 0;
 }
 
 h2 {
