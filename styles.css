@@ -1,15 +1,14 @@
-/* 
-Personal Website
-
+/* DESIGNS BY ERIN
 ============================================================================== */
 
 :root {
-  --light: #FFF0ED;
-  --mid: #EC907B;
-  --mid2: #97abb5;
-  --dark: #033C59;
-
+  --light: #FFEEDF;
+  --light2: #C99449;
+  --mid: #827F54;
+  --dark: #4A5F4D;
+  --dark2: #9F4A30;
 }
+
 
 
 /* BASE STYLES
@@ -24,9 +23,12 @@ body {
   padding: 0;
   width: 100%;
   max-width: 100vw;
-  background: var(--dark);
+  background: var(--light);
   overflow-x: hidden;
   position: relative;
+  font-family: 'Poppins', sans-serif;
+  line-height: 130%;
+  font-weight: 300;
 }
 
 img {
@@ -34,44 +36,23 @@ img {
   height: auto;
 }
 
-ul {
-  padding: 1em;
-  display: grid;
-  grid-template-columns: 1fr;
-  position: relative;
-  overflow-x: hidden;
-  z-index: 5;
-  background-color: var(--light);
-  margin-block-end: 0;
-  margin-block-start: 0;
-}
 
-/* GRID CONTAINER
+
+
+/* CONTAINER
 ============================================================================== */
-
 .container {
   max-width: 1600px;
   margin: 0 auto;
   display: grid;
-  column-gap: 2.5em;
   grid-template-columns: 1fr;
-  position: relative;
-  z-index: 2;
-  padding-bottom: 10vh;
-  overflow: hidden;
-}
-
-.container2 {
-  max-width: 1600px;
-  margin: 0 auto;
-  display: grid;
-  column-gap: 2.5em;
   position: relative;
   z-index: 4;
   padding-bottom: 25vh;
-  padding-top: 10vh;
-
+  transition: all 0.5s ease;
 }
+
+
 
 
 /* HEADER
@@ -81,395 +62,291 @@ header {
   position: relative;
   max-width: 30em;
   margin: 0 auto;
-  padding: 4em;
-  padding-top: 8em;
-  padding-bottom: 4em;
+  padding: 1em;
+  padding-bottom: 2em;
   overflow-x: hidden;
-  padding-right: 6em;
+  transition: all 0.5s ease;
 }
-
-.logo {
-  width: 50px;
-  grid-column-start: 2;
-  z-index: 5;
-}
-/*
-.logo {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  right: 4em;
-  top: 3em;
-}
-*/
-
 
 .video {
-  width: 170%;
+  width: 100%;
   height: auto;
-  margin-left: -40%;
-  margin-top: -10%;
-  margin-bottom: -20%;
   position: relative;
   z-index: -1;
+  padding-top: 0.5em;
+  padding-right: 0.5em;
 }
 
 
 
 
-/* MAIN
-============================================================================== */
 
+/* NAV THUMBNAILS
+============================================================================== */
+.thumbnails {
+  /*display: grid;*/
+  grid-template-columns: 1fr;
+  padding: 1em;
+}
+
+
+.nav-project {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.5s ease;
+}
+
+.nav-thumbnail > img {
+  display: block;
+  margin: auto;
+}
+
+
+
+/* PROJECTS
+============================================================================== */
 main {
-  width: 100%;
-  padding: 1.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #EEE1D1;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 0.5s ease 0.25s;
+  opacity: 0%;
+  transform: translateX(100vw)
+}
+
+.project-active {
+  overflow: hidden;
+}
+
+.project-active main {
+  transform: translateX(0vw);
+  opacity: 100%;
+}
+
+.project {
+  display: none;
+}
+
+main .project {
+  height: 100%;
+  max-height: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow-y: auto;
+  padding: 1em;
+  min-height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 0.5em;
+  gap: 1em;
   align-content: start;
   justify-content: center;
   justify-items: center;
 }
 
+.close-project {
+  cursor: pointer;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+}
+
+.project-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 1.5em auto;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  column-gap: 1em;
+}
 
 
 
 
 /* TYPOGRAPHY
 ============================================================================== */
-p {
-  padding-top: 1em;
-  font-family: 'Archivo', sans-serif;
-  font-style: normal;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 24px;
-  margin: 0 0 1em 0;
-  color: var(--dark);
-}
-
-b {
-  font-weight: 600;
-}
-
 h1 {
-  color: var(--dark);
-  font-family: 'Abril Fatface', serif;
-  text-transform: lowercase;
+  color: var(--light);
+  font-family: 'tenor sans', sans-serif;
   font-style: normal;
-  font-weight: 100;
-  font-size: 40px;
-  line-height: 44px;
-  margin: -8px 0 0.25em 0;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 50;
+}
+
+p {
+  font-family: 'Tenor Sans', sans-serif;
+  color: var(--dark);
+  margin: 0 0 1em 0;
+  line-height: 18px;
+  font-size: 14px;
 }
 
 h2 {
-  color: var(--dark);
-  font-family: 'Reem Kufi', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 12px;
-  font-style: normal;
-  font-size: 28px;
-  line-height: 38px;
-  font-weight: 700;
+  font-family: "merriweather", serif;
   margin: 0 0 0.25em 0;
+  color: var(--dark);
+  font-size: 1.5em;
+  line-height: 1.1em;
+  font-weight: 700;
 }
 
 h3 {
   color: var(--dark);
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Tenor sans', sans-serif;
   font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 120%;
+  font-weight: 500;
+  font-size: 14px;
   margin: 0 0 0.25em 0;
 }
 
 h4 {
-  color: var(--dark);
-  font-family: 'Archivo', sans-serif;
+  color: var(--mid);
+  font-family: 'tenor sans', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  text-decoration-line: underline;
-  line-height: 120%;
-  margin: 0 0 0.5em 0;
+  margin: 0.9em 0;
 }
 
 h5 {
+  color: var(--mid);
+  font-family: 'tenor sans', sans-serif;
   color: var(--light);
-  font-family: 'Archivo', sans-serif;
   font-style: normal;
-  letter-spacing: 3px;
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 26px;
-  margin: 0 0 1em 0;
+  font-weight: 400;
+  margin: 0.9em 0;
+  font-size: 24px;
 }
+
 
 h6 {
-  color: var(--dark);
-  font-family: 'Archivo', sans-serif;
-  font-style: normal;
-  font-size: 16px;
-  font-weight: 200;
-  line-height: 26px;
-  margin: 0 0 1em 0;
-  padding-top: 1em;
-}
-
-h7 {
-  color:#f7ded9;
-  font-family: 'Reem Kufi', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-style: normal;
-  font-size: 10px;
-  font-weight: 100px;
+  font-family: "tenor sans", sans-serif;
   margin: 0 0 0.25em 0;
-  padding-bottom: 1em;
+  color: var(--light);
+  font-size: 3em;
+  line-height: 1.1em;
+  font-weight: 400;
+  padding-bottom: 0.25em;
 }
 
-h8 {
-  font-family: 'Reem Kufi', sans-serif;
-  padding-bottom: 1em;
-  text-transform: uppercase;
-  color: var(--dark);
-  font-size: 25px;
-  letter-spacing: 13px;
-  font-style: normal;
-  line-height: 30px;
-  font-weight: 700;
-  margin: 0 0 0.25em 0;
-
+b {
+  font-family: "merriweather", serif;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 14px;
 }
 
-h9 {
-  color: var(--dark);
-  font-family: 'Reem Kufi', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  font-style: normal;
-  font-size: 22px;
-  line-height: 38px;
-  font-weight: 700;
-}
-
-
-
-
-/* My Work
-============================================================================== */
-.my-work {
-  padding-top: 5em;
-}
-
-.my-work img{
-  max-width: 60%;
+br {
+  content: "";
+  margin: 2em;
+  display: block;
+  font-size: 24%;
 }
 
 
 /* LINKS
 ============================================================================== */
-
 a {
-  color: var(--light2);
+  color: var(--mid);
+  text-decoration: none;
 }
 
 a:visited {
-  color: var(--light2);
+  color: var(--mid);
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--mid);
+  color: var(--dark2);
   background-color: transparent;
+  text-decoration: none;
+}
+
+.st0 {
+  max-height: 2em;
 }
 
 
-
-
-/* PROJECTS
+/* CONTACT OVERLAY
 ============================================================================== */
 
-.project {
-  position: relative;
-  margin-bottom: 0.5em;
-  width: 100%;
-  height: auto;
-}
-
-
-.project-thumbnail {
-  cursor: pointer; 
-  display: block;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.project-thumbnail img{
-  max-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-}
-
-.project-overlay {
-  visibility: hidden;
-  display: grid;
+#overlay, #newOverlay {
+  display: none; /* Initially hidden */
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 100vw;
-  padding: 4em;
-  z-index: 8;
-  justify-content: center;
-  align-content: baseline;
-  justify-items: center;
-  background-size: cover;
-  /*background-image: url(images/overlay-bg-mobile.svg);*/
-  background-color: var(--mid2);
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0%;
-  transition: opacity 0.75s;
-  overflow-x: hidden;
-}
-
-.project-overlay img {
-  box-shadow: -3px 3px 10px var(--dark);
-  /*
-  animation-name: float;
-  animation-duration: 3s;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite; */
-}
-
-.project#active .project-overlay {
-  visibility: visible;
-  backdrop-filter: blur(5px);
-  opacity: 100%;
-}
-
-
-.close-overlay {
-  position: absolute;
-  top: 0;
-  right: 1em;
-  font-size: 4em;
-  color: var(--dark);
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  z-index: 2;
-}
-
-.close-overlay:hover {
-  color: var(--mid);
-}
-
-.project-info {
-  padding: 2em;
- /* grid-row-start: 1; */
-}
-
-
-
-
-
-/* SITE BACKGROUND LAYERS
-============================================================================== */
-
-.site-bg-1 {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  height: auto;
-  z-index: 1;
-  bottom: auto;
-  top: 0;
+  height: 100%;
+  padding: 3em;
+  background-color: var(--dark); 
+  z-index: 999; /* Ensure the overlay is on top */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
+  align-content: center;
+  overflow-y: scroll;
 }
 
-.site-bg-1 svg {
-  margin-bottom: -10vh;
+/* Styling for the SVG element */
+svg.open, svg.open2, svg.open3 {
+  cursor: pointer; /* Change cursor to pointer on hover */
+  height: 2em;
 }
 
-
-.site-bg-1 {
-  animation-name: float;
-  animation-duration: 1s;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
-
-
-
-
-/* Slideshow container 
-============================================================================== */
-
-.slideshow-container {
-  position: relative;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  /*background: #ffffff;*/
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
+#exitButton {
   position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: var(--dark2);
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-
-/* The dots/bullets/indicators */
-.dot {
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
   cursor: pointer;
-  height: 10px;
-  width: 10px;
-  background-color: var(--light);
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+  padding: 1em;
+  color: var(--light);
+  font-family: 'tenor sans', sans-serif;
+  font-style: normal;
+  font-size: 1.5em;
+  font-weight: 900;
 }
 
-
-
-.active, .dot:hover {
-  background-color: var(--mid);
+#exitButton:hover{
+  color: var(--light2);
+  background-color: transparent;
+  text-decoration: none;
 }
 
+svg.open:hover {
+  color: var(--dark2);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+svg.open2:hover {
+  color: var(--dark2);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+#overlay img {
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 1em;
+}
+
+svg.open {
+  height: 0.9em;
+  padding-left: 0.25em;
+}
+
+svg.open2 {
+  height: 1.3em;
+  padding-left: 0.25em;
+}
+
+svg.open3 {
+  height: 1.4em;
+  padding-left: 0.25em;
+}
 
 
 
@@ -483,6 +360,7 @@ a:hover {
   from {
     transform: translateY(0);
   }
+
   to {
     transform: translateY(0.5em);
   }
@@ -496,138 +374,162 @@ a:hover {
 /* MEDIA QUERIES
 ============================================================================== */
 
-@media (min-width: 960px) {
+@media (min-width: 870px) {
+  
+  body {
+    overflow: hidden;
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  .thumbnails,
+  main,
+  .project,
+  header {
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  .thumbnails::-webkit-scrollbar,
+  main::-webkit-scrollbar,
+  .project::-webkit-scrollbar,
+  header::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .thumbnails,
+  main,
+  .project,
+  header {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
 
   .container {
-    grid-template-columns: auto 30em;
+    grid-template-columns: 400px auto;
   }
-
-  .container2 {
-    grid-template-columns: 15em auto 15em;
-  }
-
 
   header {
-    grid-column-start: 1;
+    grid-column-start: 3;
     grid-row-start: 1;
-    padding-right: 6em;
   }
 
-  main {
-    grid-column-start: 2;
-  }
+ /* #overlay, #newOverlay {
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 2em;
 
-  .project-overlay {
-   /* background-image: url(images/overlay-bg-desktop.svg);*/
-    background-color: none;
-    grid-template-columns: 1.4fr 1fr;
-    padding: 14em;
-    overflow: hidden;
-    align-content:center
-  }
+  }*/
 
-  .slideshow-container {
-    position: relative;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    /*background: #ffffff;*/
-    min-width: 40em;
-    top: 5vh;
-  } 
-  
-
-  .project-info {
-    grid-column-start: 2;
+  #overlay img {
+    max-width: 80%;
+    height: auto;
   }
-
-  .site-bg-1 {  
-    bottom: auto;
-    top: -45%;
-    z-index: 1;
-    width: 120%;
-    left: -141px;
-  }
-  .video {
-    margin-left: -50%;
-  }
-
-  .my-work {
-    padding-top: 60%;
-  }
-
 
 }
+
 
 
 @media (min-width: 1080px) {
 
-  main {
+  /* main .project {
     grid-template-columns: repeat(2, 1fr);
+  } */
+  
+  .project-info {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-end: span 3;
   }
 
   .span-two {
     grid-column-end: span 2;
   }
 
-  .span-two img {
-    max-width: 100%;
-    object-fit: cover;
-  }
-
-
   .span-three {
-    grid-column-end: span 2;
+    grid-column-end: span 3;
   }
 
   .span-two-rows {
     grid-row-end: span 2;
-    min-height: 600px;
   }
 
-  .project {
+  .span-one {
     grid-column-end: span 2;
   }
-  
-  .site-bg-1 {  
-    bottom: auto;
-    top: -32%;
-    z-index: 1;
+
+  .project img {
+    contain: style;
+    height: 100%;
     width: 100%;
-    left: 0;
+    object-fit: cover;
   }
 
-  .my-work {
-    padding-top: 60%;
+  svg.open {
+    height: 0.85em;
+    padding-left: 0.25em;
   }
+
+  svg.open2 {
+    height: 1.2em;
+    padding-left: 0.25em;
+  }
+
+  svg.open3 {
+    height: 1.4em;
+    padding-left: 0.25em;
+  }
+
+
 
 
 }
 
-@media (min-width: 1200px) {
 
-  .slideshow-container {
-    min-height: 500px;
-  }
 
-}
+
+
 
 
 @media (min-width: 1400px) {
 
-  main {
-    grid-template-columns: repeat(3, 1fr);
+  .container {
+    grid-template-columns: 200px auto 350px;
   }
 
-  .project {
-    grid-column-end: initial;
-    grid-row-end: initial;
+
+  main {
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    opacity: 100%;
+    transform: translateX(0vw)
+  }
+
+  main .project {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .close-project {
+    display: none;
+  }
+
+  .project-info {
+    grid-row-start: initial;
+  }
+
+  .nav-project:hover,
+  .nav-project.active {
+    border-color: var(--dark2);
   }
 
   .span-two {
     grid-column-end: span 2;
   }
-
 
   .span-three {
     grid-column-end: span 3;
@@ -638,39 +540,17 @@ a:hover {
     min-height: 600px;
   }
 
-  .span-two-rows img{
-    max-height: 800px;
+  .span-one {
+    grid-column-end: span 1;
   }
 
-  header {
-    padding: 0;
-    padding-top: 8em;
-    padding-bottom: 4em;
-    padding-right: 6em;
+  #overlay {
+    padding: 8em;
   }
 
-  .video {
-    margin-left: -80%;
-  }
-
-  .site-bg-1 {  
-    bottom: auto;
-    top: -108%;
-    z-index: 1;
-    width: 100%;
-    left: 0;
-  }
-
-  .my-work img{
-    max-width: 50%;
+  #newOverlay {
+    padding-left: 25em;
+    padding-right: 25em;
   }
 
 }
-
-
-
-
-
-
-
-
